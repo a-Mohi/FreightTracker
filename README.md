@@ -66,15 +66,6 @@ The repeat check runs the pipeline three times and compares the output hashes:
 python check_repeat.py
 ```
 
-The calculations and note selection are deterministic. Ties between equally close notes are resolved by note ID.
 
-## Validation
 
-I checked the results in three ways:
-
-- `eval.py` tests 12 hand-labelled weeks covering justified increases, unexplained increases, and weeks that should not be flagged. It currently reports 12/12 correct, and the expected note was retrieved in all four cases where retrieval was required.
-- The generated CSV reproduces the reference rows for Delhi-Jaipur on 2024-11-11, Ahmedabad-Mumbai on 2025-01-20, and Mumbai-Pune on 2025-09-15.
-- `check_repeat.py` runs the full pipeline three times and compares the results. The files are identical on each run.
-
-The labels in `eval.py` were written from the supplied notes, so this check confirms that the implementation follows those examples. It does not prove that the chosen thresholds are the only reasonable thresholds.
 
